@@ -70,7 +70,7 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
      *
      * @throws \Illuminate\Contracts\Encryption\EncryptException
      */
-    public function encrypt($value)
+    public function encrypt($value, $serialize = true)
     {
         $iv = mcrypt_create_iv($this->getIvSize(), $this->getRandomizer());
 
