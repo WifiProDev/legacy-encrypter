@@ -43,6 +43,7 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
         if (static::supported($key, $cipher)) {
             $this->key = $key;
             $this->cipher = $cipher;
+            error_reporting(error_reporting() & ~E_DEPRECATED);
             $this->block = mcrypt_get_iv_size($this->cipher, MCRYPT_MODE_CBC);
         } else {
             throw new RuntimeException('The only supported ciphers are MCRYPT_RIJNDAEL_128 and MCRYPT_RIJNDAEL_256.');
