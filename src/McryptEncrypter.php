@@ -112,7 +112,7 @@ class McryptEncrypter extends BaseEncrypter implements EncrypterContract
      * @param bool $unserialize
      * @return string
      */
-    public function decrypt($payload)
+    public function decrypt($payload, $unserialize = true)
     {
         $payload = $this->getJsonPayload($payload, $unserialize = true);
 
